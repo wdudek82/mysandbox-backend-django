@@ -1,3 +1,7 @@
 *.py[co]
 
-.idea/workspace.xml
+.idea
+
+assets/
+backups/
+data/
