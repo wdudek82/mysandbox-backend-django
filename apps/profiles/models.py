@@ -10,7 +10,7 @@ from colorfield.fields import ColorField
 class Profile(models.Model):
     DAY_CHOICES = ((day, day) for day in range(1, 32))
     MONTH_CHOICES = ((month, month_name[month]) for month in range(1, 13))
-    YEAR_CHOICES = ((year, year) for year in reversed(range(1900, timezone.now().year)))
+    YEAR_CHOICES = ((year, year) for year in reversed(range(1900, timezone.now().year+1)))
 
     user = models.OneToOneField(User)
     color = ColorField()
