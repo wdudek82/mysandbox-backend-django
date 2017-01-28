@@ -20,3 +20,9 @@
 - VPS hosted by Digital Ocean
 - Fedora 25
 - Nginx
+
+## TODO:
+- User profiles
+- Translations (PL/EN)
+- API
+- ...

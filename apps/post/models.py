@@ -1,10 +1,14 @@
 from __future__ import unicode_literals
+from django.dispatch import receiver
+from django.utils import timezone
 from django.db import models
+from django.db.models.signals import pre_save
 from django.contrib.auth.models import User
 
 
 class CommonCategory(models.Model):
     name = models.CharField(max_length=30, unique=True)
+    description = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -23,7 +27,7 @@ class CommonMessage(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     archived = models.BooleanField(default=False)
-    archived_at = models.DateTimeField(null=True, blank=True)
+    archived_at = models.DateTimeField(null=True, blank=True, editable=False)
 
     class Meta:
         abstract = True
@@ -47,13 +51,10 @@ class Comment(CommonMessage):
 
 class Post(CommonMessage):
     image = models.ImageField(upload_to='post/', null=True, blank=True)
-    main_category = models.ForeignKey('Category', null=True, blank=True, related_name='main_category')
-    secondary_categories = models.ManyToManyField('Category',
-                                                  blank=True,
-                                                  related_name='secondary_categories')
+    category = models.ForeignKey('Category', null=True, blank=True, related_name='category')
     tags = models.ManyToManyField('Tag', blank=True)
     draft = models.BooleanField(default=True)
-    published_at = models.DateTimeField(null=True, blank=True)
+    published_at = models.DateTimeField(null=True, blank=True, editable=False)
 
     def __str__(self):
         return self.title
@@ -65,3 +66,10 @@ class Tag(CommonCategory):
         return self.name
 
 
+@receiver(pre_save, sender=Post)
+@receiver(pre_save, sender=Comment)
+def set_archived(sender, instance, *args, **kwargs):
+    if not instance.archived:
+        instance.archived_at = None
+    elif instance.archived and not instance.archived_at:
+        instance.archived_at = timezone.now()
