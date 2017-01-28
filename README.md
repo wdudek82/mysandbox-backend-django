@@ -21,8 +21,12 @@
 - Fedora 25
 - Nginx
 
-## TODO:
+#### TODO:
 - User profiles
 - Translations (PL/EN)
 - create API
 - ...
+
+#### Additional
+- for some reason colorfield is searching for jscolor in media, so after collectstatic it's folder must be copied
+ from static to media root,
