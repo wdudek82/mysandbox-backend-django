@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,10 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party
+    'colorfield',
     'debug_toolbar',
+    'rest_framework',
 
     # Project apps
     'apps.post',
+    'apps.profiles',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +139,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'assets', 'media')
 
 # Django Debug Toolbar
 INTERNAL_IPS = ['127.0.0.1']
+
+
+# Grappelli
+GRAPPELLI_ADMIN_TITLE = 'MySandbox'
+
+
+# Django Rest Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

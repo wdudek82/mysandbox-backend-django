@@ -24,5 +24,5 @@
 ## TODO:
 - User profiles
 - Translations (PL/EN)
-- API
+- create API
 - ...
