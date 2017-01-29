@@ -4,9 +4,10 @@
 ## Built with:
 - Python 3.6
 - Django 1.10.5
-    - django colorfield
-    - django debug toolbar
-    - django rest framework
+    - django-colorfield
+    - django-debug-toolbar
+    - django-rest-framework
+    -django-rest-swagger
     - grappelli
 - Redis
 - Celery
@@ -31,6 +32,7 @@
 - Translations (PL/EN)
 - create API
 - sending messages between user profiles functionality
+- switch to Mezzanine :?
 - ...
 
 #### Additional Info

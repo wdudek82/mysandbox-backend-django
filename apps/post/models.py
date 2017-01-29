@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 class CommonCategory(models.Model):
     name = models.CharField(max_length=30, unique=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
@@ -50,10 +50,19 @@ class Comment(CommonMessage):
 
 
 class Post(CommonMessage):
+    STATUS = (
+        (0, 'draft'),
+        (1, 'published')
+    )
+
     image = models.ImageField(upload_to='post/', null=True, blank=True)
-    category = models.ForeignKey('Category', null=True, blank=True, related_name='category')
+    category = models.ForeignKey('Category',
+                                 on_delete=models.SET_NULL,
+                                 null=True,
+                                 blank=True,
+                                 related_name='category')
     tags = models.ManyToManyField('Tag', blank=True)
-    draft = models.BooleanField(default=True)
+    status = models.IntegerField(choices=STATUS, default=0)
     published_at = models.DateTimeField(null=True, blank=True, editable=False)
 
     def __str__(self):

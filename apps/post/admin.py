@@ -38,12 +38,12 @@ class CommentAdmin(admin.ModelAdmin, MessageMixins):
 
 
 class PostAdmin(admin.ModelAdmin, MessageMixins):
-    list_display = ['id', 'author', 'title', 'content', 'likes', 'dislikes', 'category', 'get_image', 'draft',
+    list_display = ['id', 'author', 'title', 'content', 'likes', 'dislikes', 'category', 'get_image', 'status',
                     'published_at', 'created_at', 'updated_at', 'archived', 'archived_at']
     list_display_links = ('title',)
     prepopulated_fields = {'slug': ('title',)}
     filter_horizontal = ('tags', )
-    list_filter = ('author__username', 'category', 'tags', 'draft', 'likes', 'dislikes', 'published_at',
+    list_filter = ('author__username', 'category', 'tags', 'likes', 'dislikes', 'status', 'published_at',
                    'created_at', 'updated_at', 'archived', 'archived_at')
     search_fields = ('title', 'content')
 
