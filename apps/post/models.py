@@ -73,3 +73,6 @@ def set_archived(sender, instance, *args, **kwargs):
         instance.archived_at = None
     elif instance.archived and not instance.archived_at:
         instance.archived_at = timezone.now()
+
+# pre_save.connect(set_archived, sender=Post)
+# pre_save.connect(set_archived, sender=Comment)

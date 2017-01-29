@@ -4,7 +4,14 @@
 ## Built with:
 - Python 3.6
 - Django 1.10.5
-    - Django Debug Toolbar
+    - django colorfield
+    - django debug toolbar
+    - django rest framework
+    - grappelli
+- Redis
+- Celery
+- Circus + Chaussette
+- Nginx
 
 ## Other tools:
 - virtualenv
@@ -17,16 +24,15 @@
 
 
 ## Production Environment:
-- VPS hosted by Digital Ocean
-- Fedora 25
-- Nginx
 
 #### TODO:
 - User profiles
+- avatar img: http://django-avatar.readthedocs.io/en/latest/
 - Translations (PL/EN)
 - create API
+- sending messages between user profiles functionality
 - ...
 
-#### Additional
+#### Additional Info
 - for some reason colorfield is searching for jscolor in media, so after collectstatic it's folder must be copied
  from static to media root,
