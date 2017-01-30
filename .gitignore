@@ -6,4 +6,5 @@ __pycache__/
 assets/
 backups/
 data/
+bower_components/
 

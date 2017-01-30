@@ -1,0 +1,14 @@
+{
+  "name": "static",
+  "authors": [
+    "Wojciech Dudek <wdudek82@gmail.com>"
+  ],
+  "description": "mysandbox project static files",
+  "main": "bower.mysandbox.json",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
