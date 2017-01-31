@@ -3,8 +3,7 @@
  */
 
 body {
-  /*font-family: Georgia, "Times New Roman", Times, serif;*/
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', serif;
   color: #ffffff;
   background-color: #353535;
 }
@@ -17,9 +16,37 @@ h5, .h5,
 h6, .h6 {
   margin-top: 0;
   font-weight: normal;
-  color: #009dff;
+  color: #ffffff;
 }
 
+a
+{
+    color: #009dff;
+    text-decoration: none;
+    transition: all 1000ms ease-in-out;
+}
+a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+a:focus {
+    color: #ff3200;
+    text-decoration: underline;
+    transition: color 500ms ease-in-out;
+}
+
+
+  /*text-decoration: none;*/
+  /*transition: color 1000ms linear;*/
+/*}*/
+
+pre {
+    background-color: rgb(38, 38, 38);
+    color: #fffe4e;
+    border-color: #009dff;
+    border-radius: 5px;
+    margin: 30px;
+}
 
 /*
  * Override Bootstrap's default container.
@@ -35,34 +62,39 @@ h6, .h6 {
 /*
  * Masthead for nav
  */
-
 .blog-masthead {
   background-color: rgb(38, 38, 38);
-  border-bottom: 5px solid #009dff;
+  border-bottom: 3px solid #009dff;
+  margin-bottom: 60px;
 }
 
 /* Nav links */
 .blog-nav-item {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: 900;
-  color: #fff;
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #fff;
+    margin-right: -3px;
 }
-/*.blog-nav-item:hover,*/
 .blog-nav-item:hover {
-  color: #009dff;
+  background-color: #00609d;
+  color: #fff;
   text-decoration: none;
+  -webkit-transition: background-color 1500ms linear;
+  -ms-transition: background-color 1500ms linear;
+  transition: background-color 1500ms linear;
 }
 .blog-nav-item:focus {
-    color: #009dff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 /* Active state gets a caret at the bottom */
 .blog-nav .active {
-  color: #009dff;
+  background-color: #009dff;
+  color: #fff;
 }
 .blog-nav .active:after {
   position: absolute;
@@ -70,28 +102,33 @@ h6, .h6 {
   left: 50%;
   width: 0;
   height: 0;
-  margin-left: -5px;
-  vertical-align: middle;
-  content: " ";
-  border-right: 5px solid transparent;
-  border-bottom: 7px solid #009dff;
-  border-left: 5px solid transparent;
 }
-
+.blog-nav-item-left,
+.blog-nav-item-left:focus {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+}
+.blog-nav-item-left:hover {
+  color: #004c7f;
+  text-decoration: none;
+  transition: color 1500ms linear;
+}
 
 /*
  * Blog name and description
  */
 
-.blog-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+/*.blog-header {*/
+  /*padding-top: 20px;*/
+  /*padding-bottom: 20px;*/
+/*}*/
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 60px;
-  font-weight: normal;
+  font-weight: 700;
 }
 .blog-description {
   font-size: 20px;
@@ -102,7 +139,6 @@ h6, .h6 {
 /*
  * Main column and sidebar layout
  */
-
 .blog-main {
   font-size: 16px;
   line-height: 1.5;
@@ -128,22 +164,32 @@ h6, .h6 {
 /* Pagination */
 .pager {
   margin-bottom: 60px;
-  text-align: left;
-}
-.pager > li > a {
-  width: 140px;
-  padding: 10px 20px;
   text-align: center;
-  border-radius: 0px;
-  border-color: #009dff;
-  background-color: rgb(38, 38, 38)
+  /*vertical-align: middle;*/
+}
+.pager > li > a,
+.pager > li > a:focus {
+    width: 140px;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: #009dff;
+    background-color: rgb(38, 38, 38);
+    color: #009dff;
+}
+.pager > li > a:hover {
+  color: #fff;
+  background-color: #004c7f;
+  transition: color 500ms linear, background-color 1000ms linear;
+}
+.pager > li > a .active {
+    background-color: rgb(38, 38, 38);
 }
 
 
 /*
  * Blog posts
  */
-
 .blog-post {
   margin-bottom: 60px;
 }
@@ -153,25 +199,19 @@ h6, .h6 {
 }
 .blog-post-meta {
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #ffd379;
 }
 
 
 /*
  * Footer
  */
-.blog-footer a:link,
-.blog-footer a:visited,
-.blog-footer a:hover {
-    color: #009dff;
-    font-weight: 900;
-}
 .blog-footer {
   padding: 40px 0;
   color: #fff;
   text-align: center;
   background-color: rgb(38, 38, 38);
-  border-top: 5px solid #009dff;
+  border-top: 3px solid #009dff;
 }
 .blog-footer :last-child {
   margin-bottom: 0;
