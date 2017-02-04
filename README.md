@@ -7,7 +7,7 @@
 4. make dirs (creates project folders)
 5. set proper proper environment: make dev/make prod
 
-# Utilities
+### Utilities
 - to make use of .env, that auto-starts venv - install autoenv outside venv
 - add autoenv to bash_rc
 - add to ~/.pip/pip.conf
