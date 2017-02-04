@@ -33,7 +33,7 @@
 - create API
 - sending messages between user profiles functionality
 - switch to Mezzanine :?
-- contaxt form
+- contact form
 - ...
 
 #### Additional Info
