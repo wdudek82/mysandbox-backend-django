@@ -19,8 +19,8 @@ h6, .h6 {
   color: #ffffff;
 }
 
-a
-{
+a,
+a .active {
     color: #009dff;
     text-decoration: none;
     transition: all 1000ms ease-in-out;
@@ -35,9 +35,8 @@ a:focus {
     transition: color 500ms ease-in-out;
 }
 
-
-  /*text-decoration: none;*/
-  /*transition: color 1000ms linear;*/
+/*input {*/
+    /*border-radius: 20%;*/
 /*}*/
 
 pre {
@@ -82,9 +81,9 @@ pre {
   background-color: #00609d;
   color: #fff;
   text-decoration: none;
-  -webkit-transition: background-color 1500ms linear;
-  -ms-transition: background-color 1500ms linear;
-  transition: background-color 1500ms linear;
+  -webkit-transition: background-color 600ms linear;
+  -ms-transition: background-color 600ms linear;
+  transition: background-color 600ms linear;
 }
 .blog-nav-item:focus {
     color: rgb(255, 255, 255);
@@ -111,9 +110,23 @@ pre {
     color: #fff;
 }
 .blog-nav-item-left:hover {
-  color: #004c7f;
+  color: #009dff;
   text-decoration: none;
-  transition: color 1500ms linear;
+  transition: color 600ms linear;
+}
+
+.blog-login,
+.blog-login:focus,
+.blog-login .active {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+}
+.blog-login:hover {
+    color: #ffc600;
+    border-radius: 20%;
+    transition: color 600ms linear;
 }
 
 /*
@@ -175,12 +188,11 @@ pre {
     border-radius: 5px;
     border-color: #009dff;
     background-color: rgb(38, 38, 38);
-    color: #009dff;
+    color: #ffffff;
 }
 .pager > li > a:hover {
-  color: #fff;
-  background-color: #004c7f;
-  transition: color 500ms linear, background-color 1000ms linear;
+   background-color: #004c7f;
+  transition: background-color 600ms linear;
 }
 .pager > li > a .active {
     background-color: rgb(38, 38, 38);

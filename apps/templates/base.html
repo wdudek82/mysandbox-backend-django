@@ -35,7 +35,8 @@
               <a class="blog-nav-item {% if request.get_full_path == '/3/' %}active{% endif %}" href="{% url 'post:detail' 3 %}">New hires</a>
               <a class="blog-nav-item {% if request.get_full_path == '/4/' %}active{% endif %}" href="{% url 'post:detail' 4 %}">About</a>
 
-              <span style="float: right;">
+{#              <span style="float: right;">#}
+              <span style="margin-left: 20%;">
                 <a class="blog-nav-item-left" href="https://www.facebook.com/wdudek82" target="_blank">
                   <i class="fa fa-facebook-square fa-fw fa-lg" aria-hidden="true"></i>
                 </a>
@@ -45,16 +46,23 @@
                 <a class="blog-nav-item-left" href="https://github.com/wdudek82" target="_blank">
                   <i class="fa fa-github fa-fw fa-lg" aria-hidden="true"></i>
                 </a>
+                <a class="blog-nav-item-left" href="https://github.com/wdudek82" target="_blank">
+                  <i class="fa fa-linkedin-square fa-fw fa-lg" aria-hidden="true"></i>
+                </a>
+              </span>
+
+              <span style="float: right;">
+                <a class="blog-login" href="{% url 'post:detail' 6 %}">
+                    <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i></a>
               </span>
             </nav>
             <div class="blog-nav">
                 <h1 class="blog-title">
                     MySandbox
-                    <img src="http://images.clipartpanda.com/low-clipart-sandbox.png" width="200px" style="margin: 0 0 10px 30px;">
+{#                    <img src="http://images.clipartpanda.com/low-clipart-sandbox.png" width="200px" style="margin: 0 0 10px 30px;">#}
                 </h1>
                 <p class="lead blog-description">
                     Built to test cool Technologies, Features & Stuff!
-                    <i class="fa fa-heart" style="color: red;" aria-hidden="true"></i>
                 </p>
             </div>
           </div>
@@ -65,7 +73,6 @@
           <div class="row">
 
             <div class="col-sm-8 blog-main">
-
               <div class="blog-post">
                 <h2 class="blog-post-title">Sample blog post</h2>
                 <p class="blog-post-meta">January 31, 2017 by <a href="#">Wojciech Dudek</a></p>
@@ -99,32 +106,6 @@
                 <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
               </div><!-- /.blog-post -->
 
-{#              <div class="blog-post">#}
-{#                <h2 class="blog-post-title">Another blog post</h2>#}
-{#                <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>#}
-{##}
-{#                <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>#}
-{#                <blockquote>#}
-{#                  <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>#}
-{#                </blockquote>#}
-{#                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>#}
-{#                <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>#}
-{#              </div><!-- /.blog-post -->#}
-{##}
-{#              <div class="blog-post">#}
-{#                <h2 class="blog-post-title">New feature</h2>#}
-{#                <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>#}
-{##}
-{#                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>#}
-{#                <ul>#}
-{#                  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>#}
-{#                  <li>Donec id elit non mi porta gravida at eget metus.</li>#}
-{#                  <li>Nulla vitae elit libero, a pharetra augue.</li>#}
-{#                </ul>#}
-{#                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>#}
-{#                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>#}
-{#              </div><!-- /.blog-post -->#}
-
               <nav>
                 <ul class="pager">
                   <li><a href="#">Previous</a></li>
@@ -135,58 +116,58 @@
             </div><!-- /.blog-main -->
 
             <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-              <div class="sidebar-module sidebar-module-inset">
-                <h4>About</h4>
-                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-              </div>
-              <div class="sidebar-module sidebar-module-inset">
-                <h4>Archives</h4>
-                <ol class="list-unstyled">
-                  <li><a href="#">March 2014</a></li>
-                  <li><a href="#">February 2014</a></li>
-                  <li><a href="#">January 2014</a></li>
-                  <li><a href="#">December 2013</a></li>
-                  <li><a href="#">November 2013</a></li>
-                  <li><a href="#">October 2013</a></li>
-                  <li><a href="#">September 2013</a></li>
-                  <li><a href="#">August 2013</a></li>
-                  <li><a href="#">July 2013</a></li>
-                  <li><a href="#">June 2013</a></li>
-                  <li><a href="#">May 2013</a></li>
-                  <li><a href="#">April 2013</a></li>
-                </ol>
-              </div>
-              <div class="sidebar-module sidebar-module-inset">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="sidebar-module sidebar-module-inset">
+                    <form class="form-inline">
+                      <label class="sr-only" for="inlineFormInputGroup">Search</label>
+                        <div class="input-group mb-sm-2 mb-sm-0">
+                            <div class="input-group-addon">
+                                <i class="fa fa-search fa-lg col-2" aria-hidden="true"></i>
+                            </div>
+                            <input type="text" class="form-control" name="search" placeholder="searched phrase">
+                        </div>
+{#                      <button type="submit" class="btn btn-default">Go</button>#}
+                    </form>
+                </div>
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>Categories</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">Django</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">Linux</a></li>
+                        <li><a href="#">Philosophy</a></li>
+                        <li><a href="#">Cognitive Science</a></li>
+                        <li><a href="#">Religious Studies</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>Archives</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="#">March 2014</a></li>
+                        <li><a href="#">February 2014</a></li>
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                        <li><a href="#">June 2013</a></li>
+                        <li><a href="#">May 2013</a></li>
+                        <li><a href="#">April 2013</a></li>
+                    </ol>
+                </div>
+                <div class="sidebar-module sidebar-module-inset">
                 <h4>Elsewhere</h4>
                 <ol class="list-unstyled">
                   <li><a href="#">GitHub</a></li>
                   <li><a href="#">Twitter</a></li>
                   <li><a href="#">Facebook</a></li>
                 </ol>
-              </div>
-{#              <div class="sidebar-module sidebar-module-inset">#}
-{#                <h4>Built ith</h4>#}
-{#                <ol class="list-unstyled" style="text-align: center;">#}
-{#                  <li><a href="#">#}
-{#                      <img src="http://reneolivo.github.io/docker-for-devs/images/logos/python.png" style="max-width: 100px;">#}
-{#                  </a></li>#}
-{#                  <li><a href="#">#}
-{#                      <img src="http://www.unixstickers.com/image/cache/data/stickers/django/dj-neg2.sh-600x600.png" style="max-width: 100px;">#}
-{#                  </a></li>#}
-{#                                    <li><a href="#">#}
-{#                      <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" style="max-width: 100px;">#}
-{#                  </a></li>#}
-{#                                      <li><a href="#">#}
-{#                      <img src="http://www.pointid.ru/wp-content/uploads/2015/11/css3-logo.png" style="max-width: 100px;">#}
-{#                  </a></li>#}
-{#                                      <li><a href="#">#}
-{#                      <img src="http://www.w3devcampus.com/wp-content/uploads/logoAndOther/logo_JavaScript.png" style="max-width: 70px;">#}
-{#                  </a></li>#}
-{#                                      <li><a href="#">#}
-{#                      <img src="https://pbs.twimg.com/profile_images/567774844322713600/tYoVju31.png" style="max-width: 100px;">#}
-{#                  </a></li>#}
-{#                </ol>#}
-{#              </div>#}
+                </div>
             </div><!-- /.blog-sidebar -->
 
 
