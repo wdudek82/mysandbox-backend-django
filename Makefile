@@ -15,15 +15,15 @@ dirs:
 	@mkdir -p backup
 
 dev:
+	@cp backend/conf/manage.py-dist manage.py
+	@cp backend/conf/wsgi.py-dist backend/wsgi.py
 	@sed -i s/conf.production/conf.development/g manage.py
-	@sed -i s/conf.settings/conf.development/g manage.py
 	@sed -i s/conf.production/conf.development/g backend/wsgi.py
-	@sed -i s/conf.settings/conf.development/g backend/wsgi.py
 	@echo " env set to development"
 
 prod:
+	@cp backend/conf/manage.py-dist manage.py
+	@cp backend/conf/wsgi.py-dist backend/wsgi.py
 	@sed -i s/conf.development/conf.production/g manage.py
-	@sed -i s/conf.settings/conf.production/g manage.py
 	@sed -i s/conf.development/conf.production/g backend/wsgi.py
-	@sed -i s/conf.settings/conf.production/g backend/wsgi.py
 	@echo " env set to production"

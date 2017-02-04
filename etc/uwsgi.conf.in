@@ -1,0 +1,17 @@
+[uwsgi]
+virtualenv = /path/to/venv
+chdir = /path/to/project/root
+env = DJANGO_SETTINGS_MODULE=backend.settings
+wsgi-file = backend/wsgi.py
+
+socket = var/matchmaker_uwsgi.sock
+master = True
+workers = 1
+processes = 1
+threads = 1
+harakiri = 30
+
+max-requests=1000
+vacuum = True
+
+daemonize = file:var/log/matchmaker_uwsgi.log

@@ -1,0 +1,38 @@
+[circus]
+statsd = True
+pidfile = $(circus.env.project_path)/var/$(circus.env.project_name).pid
+loglevel = info
+
+[watcher:application]
+cmd = chaussette --fd $(circus.sockets.application) --backend tornado backend.wsgi:application
+working_dir = $(circus.env.project_path)
+use_sockets = True
+warmup_delay = 5
+numprocesses = 3
+
+virtualenv = $(circus.env.project_path)/venv/
+virtualenv_py_ver = 3.6
+copy_env = True
+
+stdout_stream.class = FileStream
+stdout_stream.filename = $(circus.env.project_path)/var/log/$(circus.env.project_name).access.log
+stdout_sream.refresh_time = 0.3
+stdout_stream.max_bytes = 51200
+stdout_stream.backup_count = 3
+
+stderr_stream.class = FileStream
+stderr_stream.filename = $(circus.env.project_path)/var/log/$(circus.env.project_name).error.log
+stderr_stream.refresh_time = 0.3
+stderr_stream.max_bytes = 51200
+stderr_stream.backup_count = 3
+
+[socket:application]
+host = $(circus.env.host)
+port = $(circus.env.port)
+
+[plugin:statsd]
+use = circus.plugins.statsd.StatsdEmitter
+host = localhost
+port = 8125
+sample_rate = 0.1
+application_name = example

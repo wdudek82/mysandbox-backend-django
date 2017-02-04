@@ -4,14 +4,15 @@
 1. clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
 2. create virtualenv: virtualenv -p python3.6 venv
 3. pip install -r requirements.txt
-4. make dirs
-5. If you want to make use of .env, that auto-starts venv - install autoenv globally
+4. make dirs (creates project folders)
+5. set proper proper environment: make dev/make prod
 
 # Utilities
+- to make use of .env, that auto-starts venv - install autoenv outside venv
+- add autoenv to bash_rc
 - add to ~/.pip/pip.conf
 [global]
     format = columns
-- add autoenv to bash_rc
 
 ## Built with:
 - Python 3.6
