@@ -4,7 +4,9 @@
 
 __pycache__/
 assets/
+backend/conf/development.py
+backend/conf/production.py
 backup/
-data/
 bower_components/
-
+data/
+venv/
