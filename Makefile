@@ -3,16 +3,16 @@ usage:
 	@echo 
 	@echo " .: Project builder usage :. "
 	@echo " dirs	- reate project folders"
-	@echo " dev	- set env to development"
+	@echo " dev	    - set env to development"
 	@echo " prod	- set env to production"
 	@echo
 
 dirs:
 	@echo "  Creating project folders..."
-	@mkdir -p var/log
-	@mkdir -p etc/
-	@mkdir -p data
+	@mkdir -p assets
 	@mkdir -p backup
+	@mkdir -p data
+	@mkdir -p var/log
 
 dev:
 	@cp backend/conf/manage.py-dist manage.py

@@ -6,10 +6,8 @@ from .models import Category, Comment, Post, Tag
 
 class MessageMixins:
     def get_image(self, instance):
-        try:
-            return mark_safe('<img src="{}" style="max-width: 200px;">'.format(instance.image.url))
-        except:
-            return None
+        image = instance.image
+        return mark_safe('<img src="{}" style="max-width: 200px;">'.format(image.url)) if image else None
     get_image.short_description = 'image'
 
     actions = ['archive_selected']

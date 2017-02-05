@@ -2,14 +2,17 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-import apps
 
 
 urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-] + apps.urls.urlpatterns
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    # Project urls
+    url(r'', include('apps.posts.urls', namespace='posts')),
+]
+
 
 if settings.DEBUG:
     import debug_toolbar

@@ -5,6 +5,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
+SECRET_KEY = '=7d@j@ogxkb^79pjc+4n!febd1td$jm9eby+d461&_9-54xp_c'
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',

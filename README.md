@@ -10,8 +10,8 @@
 ### Utilities
 - to make use of .env, that auto-starts venv - install autoenv outside venv
 - add autoenv to bash_rc
-- add to ~/.pip/pip.conf
-[global]
+- add to ~/.pip/pip.conf:<br>
+[global]<br>
     format = columns
 
 ## Built with:

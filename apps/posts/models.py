@@ -18,7 +18,7 @@ class CommonCategory(models.Model):
 
 class CommonMessage(models.Model):
     author = models.ForeignKey(User)
-    title = models.CharField(max_length=256)
+    title = models.CharField(max_length=256, unique=True)
     slug = models.SlugField(unique=True)
     content = models.TextField()
     likes = models.IntegerField(default=0)

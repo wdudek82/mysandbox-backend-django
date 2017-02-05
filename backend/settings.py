@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Project apps
-    'apps.post',
+    'apps.posts',
     'apps.profiles',
 ]
 
@@ -144,10 +144,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'assets', 'media')
 
 # Django Debug Toolbar
 INTERNAL_IPS = ['127.0.0.1']
-
-
-# Grappelli
-GRAPPELLI_ADMIN_TITLE = 'MySandbox'
 
 
 # Django Rest Framework
