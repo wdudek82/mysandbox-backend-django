@@ -30,7 +30,6 @@ requirements: ve
 
 shebang:
 	@echo "  -> change shebang line in manage.py to point ve python ..."
-	@sed -i 's_/usr/bin/env python_ve/bin/python_g' manage.py
 
 manage:
 	@cp backend/conf/manage.py-dist manage.py
