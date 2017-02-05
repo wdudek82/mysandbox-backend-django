@@ -1,29 +1,46 @@
 
 usage:
-	@echo 
 	@echo " .: Project builder usage :. "
-	@echo " dirs	- reate project folders"
-	@echo " dev	    - set env to development"
-	@echo " prod	- set env to production"
-	@echo
+	@echo " dirs		- reate project folders"
+	@echo " ve		- check if ve folder exist, and if not - create fresh virtual env"
+	@echo " requirements	- install or upgrade dependencies listed in requirements.txt"
+	@echo " shebang		- change shebang line in manage.py to point vent python"
+	@echo " dev		- set env to development"
+	@echo " prod		- set env to production"
 
 dirs:
-	@echo "  Creating project folders..."
+	@echo " -> creating project folders ..."
 	@mkdir -p assets
 	@mkdir -p backup
 	@mkdir -p data
 	@mkdir -p var/log
 
-dev:
+ve:
+	@echo " deleting old virtual env"	
+	@rm -rf ve	
+	@echo " -> creating new virtual env ..."
+	@virtualenv -p python3.6 ve 
+
+requirements: requirements.txt 
+	@echo " -> installing project's dependencies ..."
+	@ve/bin/pip install -Ur requirements.txt
+
+shebang: manage.py
+	@echo " -> change shebang line in manage.py to point ve python ..."
+	@sed -i 's_/usr/bin/env python_ve/bin/python_g' manage.py
+
+manage:
 	@cp backend/conf/manage.py-dist manage.py
+
+wsgi:
 	@cp backend/conf/wsgi.py-dist backend/wsgi.py
+
+dev: dirs ve requirements manage wsgi
 	@sed -i s/conf.production/conf.development/g manage.py
 	@sed -i s/conf.production/conf.development/g backend/wsgi.py
-	@echo " env set to development"
+	@echo " -> env set to development"
 
-prod:
-	@cp backend/conf/manage.py-dist manage.py
-	@cp backend/conf/wsgi.py-dist backend/wsgi.py
+prod: dirs ve requirements manage wsgi
 	@sed -i s/conf.development/conf.production/g manage.py
 	@sed -i s/conf.development/conf.production/g backend/wsgi.py
-	@echo " env set to production"
+	@echo " -> env set to production"

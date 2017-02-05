@@ -11,4 +11,5 @@ backup/
 bower_components/
 data/
 manage.py
+ve/
 venv/

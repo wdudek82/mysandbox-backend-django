@@ -1,15 +1,12 @@
 # MySandbox Project
 
 ## Installation:
-1. clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
-2. create virtualenv: virtualenv -p python3.6 venv
-3. pip install -r requirements.txt
-4. make dirs (creates project folders)
-5. set proper proper environment: make dev/make prod
+1. clone mysandbox project from github: clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
+2. create virtualenv and set proper env settings by typing: make dev/prod (type 'make' in project's root for more information) 
 
 ### Utilities
-- to make use of .env, that auto-starts venv - install autoenv outside venv
-- add autoenv to bash_rc
+- to make use of .env, that auto-starts virtual env install autoenv by OS's pip
+- configure autoenv: https://github.com/kennethreitz/autoenv
 - add to ~/.pip/pip.conf:<br>
 [global]<br>
     format = columns
