@@ -10,5 +10,9 @@ backend/wsgi.py
 backup/
 bower_components/
 data/
+env/
 manage.py
+ve/
 venv/
+
+config.mk

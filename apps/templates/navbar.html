@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <a class="blog-nav-item {% if request.get_full_path == '/' %}active{% endif %}" href="/">Home</a>
+      <a class="blog-nav-item {% if request.get_full_path == '/1/' %}active{% endif %}" href="{% url 'posts:detail' 1 %}">New features</a>
+      <a class="blog-nav-item {% if request.get_full_path == '/2/' %}active{% endif %}" href="{% url 'posts:detail' 2 %}">Press</a>
+      <a class="blog-nav-item {% if request.get_full_path == '/3/' %}active{% endif %}" href="{% url 'posts:detail' 3 %}">New hires</a>
+      <a class="blog-nav-item {% if request.get_full_path == '/4/' %}active{% endif %}" href="{% url 'posts:detail' 4 %}">About</a>
 
-</body>
-</html>
+      <span style="margin-left: 20%;">
+        <a class="blog-nav-item-left" href="https://www.facebook.com/wdudek82" target="_blank">
+          <i class="fa fa-facebook-square fa-fw fa-lg" aria-hidden="true"></i>
+        </a>
+        <a class="blog-nav-item-left" href="https://twitter.com/WojtekDudek82" target="_blank">
+          <i class="fa fa-twitter fa-fw fa-lg" aria-hidden="true"></i>
+        </a>
+        <a class="blog-nav-item-left" href="https://github.com/wdudek82" target="_blank">
+          <i class="fa fa-github fa-fw fa-lg" aria-hidden="true"></i>
+        </a>
+        <a class="blog-nav-item-left" href="https://github.com/wdudek82" target="_blank">
+          <i class="fa fa-linkedin-square fa-fw fa-lg" aria-hidden="true"></i>
+        </a>
+      </span>
+
+      <span style="float: right;">
+        <a class="blog-login" href="{% url 'posts:detail' 6 %}">
+            <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i></a>
+      </span>
+    </nav>
+    <div class="blog-nav">
+        <h1 class="blog-title">
+            MySandbox
+        </h1>
+        <p class="lead blog-description">
+            Built to test cool Technologies, Features & Stuff!
+        </p>
+    </div>
+  </div>
+</div>

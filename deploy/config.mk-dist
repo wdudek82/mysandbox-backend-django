@@ -1,0 +1,3 @@
+VIRTUALENV=ve/bin/
+ENV=dev
+
