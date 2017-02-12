@@ -8,7 +8,7 @@ def post_create(request):
 
 def posts_detail(request, pk=None):
     print(pk)
-    return render(request, 'base.html', {})
+    return render(request, 'base_v3.html', {})
 
 
 def posts_list(request):
@@ -16,7 +16,7 @@ def posts_list(request):
     context = {
         'posts': posts,
     }
-    return render(request, 'base.html', context)
+    return render(request, 'base_v3.html', context)
 
 
 def post_update(request, pk=None):

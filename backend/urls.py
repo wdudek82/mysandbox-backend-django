@@ -9,6 +9,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
+    # Third party
+    url(r'^summernote/', include('django_summernote.urls')),
+
     # Project urls
     url(r'', include('apps.posts.urls', namespace='posts')),
 ]

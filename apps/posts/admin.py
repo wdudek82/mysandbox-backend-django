@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.utils import timezone
 from django.utils.html import mark_safe
+
+from django_summernote.admin import SummernoteModelAdmin
+
 from .models import Category, Comment, Post, Tag
 
 
@@ -35,7 +38,8 @@ class CommentAdmin(admin.ModelAdmin, MessageMixins):
     search_fields = ('title', 'content',)
 
 
-class PostAdmin(admin.ModelAdmin, MessageMixins):
+# class PostAdmin(admin.ModelAdmin, MessageMixins):
+class PostAdmin(SummernoteModelAdmin, MessageMixins):
     list_display = ['id', 'author', 'title', 'content', 'likes', 'dislikes', 'category', 'get_image', 'status',
                     'published_at', 'created_at', 'updated_at', 'archived', 'archived_at']
     list_display_links = ('title',)

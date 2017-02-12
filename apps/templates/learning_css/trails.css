@@ -1,0 +1,248 @@
+@charset "utf-8";
+
+/* color guide:
+#cb7d20 orange
+
+ */
+
+/*limited reset*/
+html, body, div, section, article, aside, header, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address,
+time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #cb7d20;
+}
+a:hover {
+    color: #952;
+}
+
+/*html5 display rule*/
+address, article, aside, canvas, details, figcaption, figure, footer, header, nav, menu, nav, section, summary {
+    display: block;
+}
+html {
+    background: #ddd;
+}
+body {
+    font: 100% Georgia, "Times New Roman", Times, serif;
+    width: 1100px;
+    margin: 0 auto;
+    padding: 0 50px;
+    text-align: left;
+    position: relative;
+    background: white;
+}
+
+nav ul, ul.menu {
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+}
+
+/* layaut styles */
+header #mainHeader {
+    height: 185px;
+}
+main {
+    float: left;
+    width: 600px;
+    padding: 0 10px 0 25px;
+    margin-bottom: 2em;
+    border-right: 1px solid #7f7f7f;
+}
+section #riderReviews, section #reviews {
+    float: right;
+    clear: right;
+    width: 450px;
+    margin-bottom: 0;
+}
+aside #adCopy {
+    float: right;
+    clear: right;
+    width: 450px;
+    margin-bottom: 1em;
+}
+footer #pageFooter {
+    clear: both;
+    overflow: auto;
+}
+
+.floatRight {
+    float: right;
+}
+.floatLeft {
+    float: left;
+}
+.imgRight {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+/*----------------presentation styles----------------*/
+
+.pubdate {
+    text-align: right;
+    color: #666;
+    font-size: .9em;
+    font-style: italic;
+}
+
+/* header style */
+header#mainHeader {
+    background: #fffccf;
+}
+header#mainHeader h1 span {
+    position: absolute;
+    left: -2000em;
+}
+header#mainHeader nav {
+    position: absolute;
+    left: 225px;
+    top: 0;
+    padding-top: 15px;
+}
+header#mainHeader ul {
+    float: left;
+}
+header#mainHeader ul li {
+    float: left;
+}
+header#mainHeader ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    color: #000;
+    padding: 0 20px;
+    border-right: 1px solid #000;
+    text-decoration: none;
+}
+header#mainHeader ul li a:last-child {
+    border: none;
+}
+header#mainHeader ul li a.current {
+    color: #cb7d20;
+}
+header#mainHeader ul li a:hover {
+    color: #cb7d20;
+}
+header#mainHeader h1 {
+    font-size: 6em;
+    color: #7f7f7f;
+    font-weight: normal;
+}
+header#mainHeader p {
+    font-weight: normal;
+    font-size: 2em;
+}
+
+/* trail info section styles */
+/*main {*/
+    /*borser-rigtht:;*/
+/*}*/
+p.breadcrumbs {
+    font-size: .9em;
+    color: #cb7d20;
+}
+main header a {
+    color: #cb7d20;
+}
+main header a:hover {
+    color: #952;
+}
+main header h2 {
+    font-weight: normal;
+    font-size: 1.8em;
+    margin-top: .5em;
+}
+main article h3 {
+    font-weight: normal;
+    font-size: 1.8em;
+    margin-top: .5em;
+}
+main article h2.submit {
+    font-size: 2em;
+    margin: 1em 0 .2em;
+}
+main caption {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4em;
+    text-align: left;
+}
+
+
+
+
+main img {
+    display: block;
+}
+
+main figcaption {
+    text-transform: uppercase;
+    color: #4d4d4d;
+    font-size: 1.2em;
+}
+
+main blockquote {
+    background: #ddd;
+    color: #4d4d4d;
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    padding: .5em .5em 0;
+}
+main blockquote footer {
+    background: #4d4d4d4d;
+    color: #fff;
+    text-align: right;
+    padding: .5em;
+    line-height: 1;
+    margin: .5em -.5em 0;
+    font-size: .9em;
+}
+main h4 {
+    font-size: 1em;
+    margin-top: 1.2em;
+    margin-bottom: 0;
+    color: #000;
+}
+main .currentTrail {
+    margin-top: 2em;
+}
+
+section #riderReviews aside, #reviews article {
+    background: #e1d8b9;
+    padding: 0 20px 20px;
+    margin-bottom: 1.5em;
+}
+
+section#riderReviews aside h3 {
+    font-size: 1.6em;
+    font-weight: normal;
+    color: #000;
+    background: #c3cebc;
+    padding: .5em;
+    margin: 0 -20px .5em;
+}
+
+section #reviews article h3 {
+
+}
+
+
+ol {
+
+}
+
+.leftCol {
+    float: left;
+}
+.rightCol {
+    float: right;
+}

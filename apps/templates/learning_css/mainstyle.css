@@ -1,0 +1,117 @@
+/* @import "heading.css"; */
+
+/*mainstyle.css*/
+* {
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+div * {
+    /*font-family: "Times New Roman", cursive, sans-serif;*/
+}
+
+.sitelink {
+    font-family: Georgia, serif;
+}
+
+#tonyquote {
+    font-family: "Times New Roman", "Lucida Grenade", sans-serif;
+    color: black;
+}
+
+p.sitelink {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, sans-serif;
+}
+
+span#tonyname {
+    font-weight: 900;
+}
+
+#tutorials ol li {
+    color: purple;
+}
+
+#tutorials ul li {
+    color: green;
+}
+
+h3 + p {
+    font-style: italic;
+}
+
+h3 + p > a {
+    color: red;
+}
+
+p[class] {
+    background: gray;
+}
+
+p[id] {
+    background: yellow;
+}
+
+*[alt~="nintendo"] {
+    background: orange;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*blog-navbar*/
+header.main-header {
+    /*position: absolute;*/
+    margin-top: -21px;
+}
+
+.blog-navbar {
+    background-color: #0F6AB4;
+}
+
+.blog-navbar ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    color: gray;
+    list-style-type: none;
+    margin-top: 0;
+}
+.blog-navbar ul li {
+    /*position: relative;*/
+    display: inline-block;
+    padding: 10px 10px 7px 10px;
+    margin: 0 -5px;
+    background: #000;
+    border-bottom: 3px solid black;
+}
+.blog-navbar ul li:hover {
+    color: #fff;
+    background: #213648;
+    border-bottom: 3px solid #3c8ca5;
+    transition: background 800ms linear,
+                border-bottom 800ms linear,
+                color 800ms linear;
+}
+
+.blog-main {
+    position: relative;
+    margin-top: 58.4px;
+}
+
+
+/*heading.css*/
+h1, h2 {
+    color: white;
+    background: black;
+    padding: 15px;
+}
+
+/*paragraph.css*/
+p{
+    color: blue;
+}

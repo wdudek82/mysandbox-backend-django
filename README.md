@@ -1,7 +1,9 @@
 # MySandbox Project
 
 ## Installation:
-1. clone mysandbox project from github: clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
+1. clone 
+[mysandbox project](https://github.com/wdudek82/mysandbox)
+from github: clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
 2. create virtualenv and set proper env settings by typing: make dev/prod (type 'make' in project's root for more information) 
 
 ### Utilities
@@ -32,7 +34,6 @@
 ## Relational DB:
 - SQLite (in development)
 - PostgreSQL (in production)
-
 
 ## Production Environment:
 
