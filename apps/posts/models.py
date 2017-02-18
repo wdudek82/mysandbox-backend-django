@@ -4,19 +4,18 @@ from django.utils import timezone
 from django.db import models
 from django.db.models.signals import pre_save
 from django.contrib.auth.models import User
+from behaviors.behaviors import Published, Timestamped
 
 
-class CommonCategory(models.Model):
+class CommonCategory(Timestamped):
     name = models.CharField(max_length=30, unique=True)
     description = models.TextField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         abstract = True
 
 
-class CommonMessage(models.Model):
+class CommonMessage(Timestamped):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=256, unique=True)
     slug = models.SlugField(unique=True)
@@ -24,8 +23,6 @@ class CommonMessage(models.Model):
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
 
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
     archived = models.BooleanField(default=False)
     archived_at = models.DateTimeField(null=True, blank=True, editable=False)
 
@@ -49,11 +46,7 @@ class Comment(CommonMessage):
         return self.title
 
 
-class Post(CommonMessage):
-    STATUS = (
-        (0, 'draft'),
-        (1, 'published')
-    )
+class Post(CommonMessage, Published):
 
     image = models.ImageField(upload_to='post/', null=True, blank=True)
     category = models.ForeignKey('Category',
@@ -62,7 +55,6 @@ class Post(CommonMessage):
                                  blank=True,
                                  related_name='category')
     tags = models.ManyToManyField('Tag', blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     published_at = models.DateTimeField(null=True, blank=True, editable=False)
 
     def __str__(self):

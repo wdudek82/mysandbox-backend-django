@@ -40,9 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party
-    'django_summernote',
     'colorfield',
+    'behaviors.apps.BehaviorsConfig',
     'debug_toolbar',
+    'django_summernote',
     'rest_framework',
 
     # Project apps
