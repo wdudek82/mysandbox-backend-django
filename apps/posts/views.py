@@ -42,7 +42,7 @@ def posts_detail(request, slug=None):
 
 
 # TODO: custom manager for Post, that filter all posts from a given month
-# TODO: reqrite all views as ClassBased Views
+# TODO: rewrite all views as ClassBased Views
 # TODO: Add authentication/OAuth
 def posts_list(request, category_slug=None):
     published_posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')

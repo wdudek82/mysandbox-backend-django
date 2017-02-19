@@ -17,6 +17,7 @@ from github: clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
 - Python 3.6
 - Django 1.10.5
     - django-colorfield (color picker)
+    - django-crispy-forms
     - django-debug-toolbar
     - django-rest-framework
     - django-rest-swagger
