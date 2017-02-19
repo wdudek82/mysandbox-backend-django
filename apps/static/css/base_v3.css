@@ -23,14 +23,35 @@ a, a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: yellow;
+    color: #ffff00;
     text-decoration: none;
-    transition: color 700ms linear;
+    transition: color 700ms ease-in-out;
+    /*-webkit-animation: burn 1s ease-out;*/
+    /*-webkit-animation-iteration-count: 1;*/
+    /*-webkit-animation-fill-mode: forwards;*/
 }
+/*@-webkit-keyframes burn {*/
+    /*!*0% {color: #009dff}*!*/
+    /*50% {color: #ffff00;}*/
+    /*100% {color: #ff7300;}*/
+/*}*/
+
 a:focus {
-    color: #ff4511;
     text-decoration: none;
-    transition: color 500ms linear;
+    color: #009dff;
+}
+
+pre {
+    background-color: rgb(38, 38, 38);
+    color: #fffe4e;
+    border-color: #009dff;
+    border-radius: 5px;
+    margin: 30px;
+}
+
+/*table*/
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #363133;
 }
 
 /* main header */
@@ -45,13 +66,16 @@ header.blog-master-header {
     border-bottom: none;
 }
 .navbar-inverse {
+    border: 0;
     border-radius: 0;
 }
 .navbar-nav>li>a, a.navbar-brand {
     padding: 10px 15px;
     height: 40px;
 }
-div.navbar-header > .navbar-brand {
+div.navbar-header a.navbar-brand > p,
+div.navbar-header a.navbar-brand:hover > p,
+div.navbar-header a.navbar-brand:focus > p {
     font-weight: 900;
     color: #fff;
     padding-left: 5px;
@@ -71,6 +95,30 @@ p#brand-text {
     display: inline-block;
     margin: 0 10px;
 }
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:hover,
+.navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: #009dff;
+    color: #fff;
+    font-weight: 900;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: #009dff;
+    color: #fff;
+    transition: background-color 600ms linear;
+
+    /*-webkit-animation: pulsate 1s ease-in;*/
+    /*-webkit-animation-iteration-count: infinite;*/
+}
+/*@-webkit-keyframes pulsate {*/
+    /*0% {background-color: #009dff}*/
+    /*50% {background-color: #005b92;}*/
+    /*100% {background-color: #009dff}*/
+/*}*/
+
 
 /* jumbotron */
 nav.navbar.navbar-inverse {
@@ -90,6 +138,49 @@ aside div.container div.jumbotron {
     border-radius: 0;
     background-color: #2e2e31;
 }
+
+
+/*
+ * Main column and sidebar layout
+ */
+.blog-main {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: rgb(38, 38, 38);
+  border-radius: 0;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+ * Blog posts
+ */
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #ffd379;
+}
+
 
 /* main footer */
 footer {

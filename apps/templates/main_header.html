@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<header class="blog-master-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'img/bucket-icon.svg' %}" class="navbar-brand-icon">
+                    <p id="brand-text">MySandbox</p>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    {% if request.user.is_authenticated %}
+                        <li><a href="#" title="{{ user.username }}'s profile">
+                            {{ user.username }}
+                        </a></li>
+                        <li><a href="#" title="Log out"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                    {% else %}
+                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a></li>
+                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <aside class="blog-navbar-aside">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>MySandbox Project</h1>
+                <p>My place for field testing new tech, features, and all other toys! :D</p>
+            </div>
+        </div>
+    </aside>
+</header>

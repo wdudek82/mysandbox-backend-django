@@ -1,14 +1,16 @@
 from __future__ import unicode_literals
-from django.dispatch import receiver
-from django.utils import timezone
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import pre_save
-from django.contrib.auth.models import User
-from behaviors.behaviors import Published, Timestamped
+from django.dispatch import receiver
+from django.utils import timezone
+from django.utils.html import mark_safe
+from behaviors.behaviors import Timestamped
 
 
 class CommonCategory(Timestamped):
     name = models.CharField(max_length=30, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
     description = models.TextField(null=True, blank=True)
 
     class Meta:
@@ -18,7 +20,7 @@ class CommonCategory(Timestamped):
 class CommonMessage(Timestamped):
     author = models.ForeignKey(User)
     title = models.CharField(max_length=256, unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(max_length=256, unique=True)
     content = models.TextField()
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
@@ -45,9 +47,9 @@ class Comment(CommonMessage):
     def __str__(self):
         return self.title
 
+# TODO: Add custom manager to filter "published" posts
 
-class Post(CommonMessage, Published):
-
+class Post(CommonMessage):
     image = models.ImageField(upload_to='post/', null=True, blank=True)
     category = models.ForeignKey('Category',
                                  on_delete=models.SET_NULL,
@@ -55,10 +57,16 @@ class Post(CommonMessage, Published):
                                  blank=True,
                                  related_name='category')
     tags = models.ManyToManyField('Tag', blank=True)
-    published_at = models.DateTimeField(null=True, blank=True, editable=False)
+    publication_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.title
+
+    def get_publication_status(self):
+        if self.publication_date and self.publication_date <= timezone.now():
+            return mark_safe('<strong style="color: green;">published</strong>')
+        else:
+            return mark_safe('<strong style="color: orangered;">draft</strong>')
 
 
 class Tag(CommonCategory):

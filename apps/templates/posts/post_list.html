@@ -1,0 +1,36 @@
+{% extends "../blog_base.html" %}
+
+{% block content %}
+
+<article class="blog-post">
+    <h1 class="blog-post-title">{{ page.title }}</h1>
+    <table class="table table-hover table-inverse">
+        <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for published_post in published_posts %}
+            <tr>
+                <th scope="row">{{ published_post.id }}</th>
+                <td><a href="{% url 'posts:detail' published_post.slug %}">{{ published_post.title }}</a></td>
+                <td>{{ published_post.category }}</td>
+                <td>{{ published_post.publication_date }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <th scope="row">-</th>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</article>
+
+{% endblock content %}

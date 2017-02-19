@@ -22,10 +22,10 @@ class MessageMixin:
 
 
 class AbstractCategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description', 'created', 'changed', 'modified')
+    list_display = ('id', 'name', 'slug', 'description', 'created', 'changed', 'modified')
     list_display_links = ('name',)
     list_filter = ('created', 'modified',)
-    search_fields = ('name', 'description')
+    search_fields = ('name', 'slug', 'description')
     exclude = ('modified',)
 
 
@@ -39,12 +39,13 @@ class CommentAdmin(admin.ModelAdmin, MessageMixin):
 
 
 class PostAdmin(SummernoteModelAdmin, MessageMixin):
-    list_display = ('id', 'author', 'title', 'content', 'likes', 'dislikes', 'category', 'get_image',
-                    'publication_status', 'published_at', 'created', 'changed', 'modified', 'archived', 'archived_at')
+    list_display = ('id', 'title', 'author', 'content', 'likes', 'dislikes', 'category', 'get_image',
+                    'get_publication_status', 'publication_date', 'created', 'changed', 'modified',
+                    'archived', 'archived_at')
     list_display_links = ('title',)
     prepopulated_fields = {'slug': ('title',)}
     filter_horizontal = ('tags', )
-    list_filter = ('author__username', 'category', 'tags', 'likes', 'dislikes', 'publication_status', 'published_at',
+    list_filter = ('author__username', 'category', 'tags', 'publication_date',
                    'created', 'modified', 'archived', 'archived_at')
     search_fields = ('title', 'content')
     exclude = ('modified',)
