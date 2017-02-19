@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load crispy_forms_tags %}
 
 <header class="blog-master-header">
     <nav class="navbar navbar-inverse">
@@ -26,10 +27,13 @@
                         <li><a href="#" title="{{ user.username }}'s profile">
                             {{ user.username }}
                         </a></li>
-                        <li><a href="#" title="Log out"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                        <li class="navbar-logout">
+                            <a href="accounts/logout/" title="Log out"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                     {% else %}
                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a></li>
-                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                    <li class="navbar-login">
+{#                        <a href="accounts/login/"><i class="fa fa-sign-in" aria-hidden="true" data-toggle="modal" data-target="#authModal"></i> Login</a></li>#}
+                        <a href="{% url 'login' %}" data-toggle="modal" data-target="#authModal"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -41,6 +45,15 @@
                 <h1>MySandbox Project</h1>
                 <p>My place for field testing new tech, features, and all other toys! :D</p>
             </div>
+
+
+            <div id="authModal" class="modal fade text-center">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </aside>
 </header>

@@ -119,6 +119,15 @@ p#brand-text {
     /*100% {background-color: #009dff}*/
 /*}*/
 
+.navbar-inverse .navbar-nav>li.navbar-login>a:hover {
+    background-color: #008000;
+    transition: background-color 600ms linear;
+}
+.navbar-inverse .navbar-nav>li.navbar-logout>a:hover {
+    background-color: #ff0000;
+    transition: background-color 600ms linear;
+}
+
 
 /* jumbotron */
 nav.navbar.navbar-inverse {
@@ -211,8 +220,50 @@ footer div {
 .profile-avatar > img {
     max-width: 150px;
     max-height: 150px;
-    /*clip-path: circle(60px at center);*/
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+}
+
+/* modal */
+div.modal-dialog {
+    width: 400px;
+}
+div.modal-content {
+    width: 400px;
+    height: 200px;
+    border-radius: 0;
+}
+div.modal-header {
+    border-bottom: 3px solid #009dff;
+}
+div.modal-header, div.modal-body, div.panel {
+    background-color: #2e2e31;
+}
+div.modal-header .close {
+    color: #fff;
+}
+div.modal-body {
+    padding-bottom: 10px;
+}
+
+div.panel {
+    border: 0;
+    box-shadow: 0 0 0;
+}
+div.panel-body {
+    padding: 15px 15px 0 15px;
+}
+
+/*div.panel.panel-default {*/
+    /*padding: 0;*/
+/*}*/
+
+/* bootstrap buttons */
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none !important;
+}
+
+button.btn.btn-primary {
+    border-radius: 0;
 }

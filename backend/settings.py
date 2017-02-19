@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # Third party
     'colorfield',
+    'crispy_forms',
     'behaviors.apps.BehaviorsConfig',
     'debug_toolbar',
     'django_summernote',
@@ -81,6 +82,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+# Crispy Forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
@@ -176,3 +181,5 @@ SUMMERNOTE_CONFIG = {
     # # Set custom model for attachments (default: 'django_summernote.Attachment')
     # 'attachment_model': 'my.custom.attachment.model', # must inherit 'django_summernote.AbstractAttachment'
 }
+
+LOGIN_REDIRECT_URL = '/'

@@ -1,7 +1,9 @@
 import calendar
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db import models
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
-from django.db import models
 from .models import Category, Post, Tag
 from apps.blog.models import About, Social
 
@@ -15,14 +17,16 @@ def get_sidebar_data():
     sidebar = {
         'about': About.objects.get(is_current=True),
         'categories': categories,
-        'title': 'All Entries',
         'months_names': (calendar.month_name[num] for num in range(1, 13)),
+        'title': 'All Entries',
+        'tags': Tag.objects.all(),
         'social': Social.objects.filter(visible=True)
     }
     return sidebar
 
 
 # TODO: add wysiwyg editor to template
+@login_required()
 def post_create(request):
     pass
 
@@ -48,7 +52,7 @@ def posts_list(request, category_slug=None):
         try:
             selected_category = Category.objects.get(slug=category_slug)
             sidebar['title'] += f' in category "{selected_category.name}"'
-        except models.ObjectDoesNotExist as e:
+        except models.ObjectDoesNotExist:
             sidebar['title'] = 'No such category exists!'
     context = {
         'sidebar': sidebar,
@@ -57,9 +61,15 @@ def posts_list(request, category_slug=None):
     return render(request, 'posts/post_list.html', context)
 
 
+@login_required()
 def post_update(request, pk=None):
     pass
 
 
+@login_required()
 def post_delete(request, pk=None):
+    pass
+
+
+class PostDelete(LoginRequiredMixin):
     pass
