@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Project apps
+    'apps.blog',
+    'apps.forecasts',
     'apps.posts',
     'apps.profiles',
 ]
@@ -154,4 +156,23 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+}
+
+
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode
+    'iframe': True,  # or set False to use SummernoteInplaceWidget - no iframe mode
+
+    # Using Summernote Air-mode
+    'airMode': False,
+
+    # Change editor size
+    'width': '80%',
+    'height': '600',
+
+    # # Set custom storage class for attachments.
+    # 'attachment_storage_class': 'my.custom.storage.class.name',
+    #
+    # # Set custom model for attachments (default: 'django_summernote.Attachment')
+    # 'attachment_model': 'my.custom.attachment.model', # must inherit 'django_summernote.AbstractAttachment'
 }

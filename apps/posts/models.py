@@ -67,6 +67,7 @@ class Post(CommonMessage):
             return mark_safe('<strong style="color: green;">published</strong>')
         else:
             return mark_safe('<strong style="color: orangered;">draft</strong>')
+    get_publication_status.short_description = 'publication status'
 
 
 class Tag(CommonCategory):

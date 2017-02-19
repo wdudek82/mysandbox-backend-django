@@ -21,6 +21,7 @@ class MessageMixin:
     archive_selected.short_description = 'Archive selected posts'
 
 
+@admin.register(Category)
 class AbstractCategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'slug', 'description', 'created', 'changed', 'modified')
     list_display_links = ('name',)
@@ -29,6 +30,7 @@ class AbstractCategoryAdmin(admin.ModelAdmin):
     exclude = ('modified',)
 
 
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin, MessageMixin):
     list_display = ('id', 'author', 'title', 'content', 'likes', 'dislikes', 'created', 'changed', 'modified',
                     'archived', 'archived_at')
@@ -38,6 +40,7 @@ class CommentAdmin(admin.ModelAdmin, MessageMixin):
     exclude = ('modified',)
 
 
+@admin.register(Post)
 class PostAdmin(SummernoteModelAdmin, MessageMixin):
     list_display = ('id', 'title', 'author', 'content', 'likes', 'dislikes', 'category', 'get_image',
                     'get_publication_status', 'publication_date', 'created', 'changed', 'modified',
@@ -51,7 +54,7 @@ class PostAdmin(SummernoteModelAdmin, MessageMixin):
     exclude = ('modified',)
 
 
-admin.site.register(Category, AbstractCategoryAdmin)
-admin.site.register(Comment, CommentAdmin)
-admin.site.register(Post, PostAdmin)
+# admin.site.register(Category, AbstractCategoryAdmin)
+# admin.site.register(Comment, CommentAdmin)
+# admin.site.register(Post, PostAdmin)
 admin.site.register(Tag, AbstractCategoryAdmin)

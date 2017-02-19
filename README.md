@@ -16,10 +16,11 @@ from github: clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
 ## Built with:
 - Python 3.6
 - Django 1.10.5
-    - django-colorfield
+    - django-colorfield (color picker)
     - django-debug-toolbar
     - django-rest-framework
     - django-rest-swagger
+    - django-summernote (WYSIWYG editor)
     - grappelli
 - Redis
 - Celery
