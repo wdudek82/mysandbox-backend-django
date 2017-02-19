@@ -1,7 +1,10 @@
 <section class="col-xs-3 col-sm-offset-1 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
+        <p class="profile-avatar">
+            <img src="{{ sidebar.about.image.url }}">
+        </p>
         <h4>About</h4>
-        <p>{{ page.about.content|safe }}</p>
+        <p>{{ sidebar.about.content|safe }}</p>
     </div>
     <div class="sidebar-module sidebar-module-inset">
         <form class="form-inline">
@@ -18,7 +21,7 @@
     <div class="sidebar-module sidebar-module-inset">
         <h4>Categories</h4>
         <ol class="list-unstyled">
-            {% for category in categories %}
+            {% for category in sidebar.categories %}
             <li><a href="{% url 'posts:in_category' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ol>
@@ -34,7 +37,7 @@
     <div class="sidebar-module sidebar-module-inset">
         <h4>Archives</h4>
         <ol class="list-unstyled">
-            {% for month in page.months_names %}
+            {% for month in sidebar.months_names %}
             <li><a href="#">{{ month }} 2017 (0)</a></li>
             {% endfor %}
 
@@ -43,7 +46,7 @@
     <div class="sidebar-module sidebar-module-inset">
         <h4>Elsewhere</h4>
         <ol class="list-unstyled">
-            {% for social in page.social %}
+            {% for social in sidebar.social %}
                 <li><a href="{{ social.url }}">{{ social.name }}</a></li>
             {% endfor %}
         </ol>

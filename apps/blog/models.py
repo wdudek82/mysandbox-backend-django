@@ -5,15 +5,14 @@ from behaviors.behaviors import Timestamped
 
 
 # TODO: Add SummernoteModelAdmin (wysywig) to About model
-# TODO: Add 'about' model with 'current' field
-# TODO: Add social media contacts with icons
 class About(Timestamped):
     content = models.TextField()
+    image = models.ImageField(upload_to='about', null=True, blank=True)
     is_current = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'About'
-        ordering = ('is_current',)
+        ordering = ('-is_current',)
 
     def __str__(self):
         return str(self.id)

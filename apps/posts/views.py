@@ -6,18 +6,20 @@ from .models import Category, Post, Tag
 from apps.blog.models import About, Social
 
 
-def get_page_info():
+def get_sidebar_data():
     """
-    General information about page: page title (not jumbotron!), 'about' contentm
-    archival posts, etc.
+    General information about page: page title (not jumbotron!),
+    and sidebar content: about, archival posts, categories, etc.
     """
-    page = {
+    categories = Category.objects.all()
+    sidebar = {
         'about': About.objects.get(is_current=True),
+        'categories': categories,
         'title': 'All Entries',
         'months_names': (calendar.month_name[num] for num in range(1, 13)),
         'social': Social.objects.filter(visible=True)
     }
-    return page
+    return sidebar
 
 
 # TODO: add wysiwyg editor to template
@@ -27,10 +29,10 @@ def post_create(request):
 
 def posts_detail(request, slug=None):
     post = get_object_or_404(Post, slug=slug)
-
+    sidebar = get_sidebar_data()
     context = {
         'post': post,
-        'page': get_page_info(),
+        'sidebar': sidebar,
     }
     return render(request, 'posts/post_detail.html', context)
 
@@ -39,28 +41,18 @@ def posts_detail(request, slug=None):
 # TODO: reqrite all views as ClassBased Views
 # TODO: Add authentication/OAuth
 def posts_list(request, category_slug=None):
-    categories = Category.objects.all()
     published_posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
-    page = get_page_info()
-
-
+    sidebar = get_sidebar_data()
     if category_slug:
         published_posts = published_posts.filter(category__slug=category_slug)
-
         try:
             selected_category = Category.objects.get(slug=category_slug)
-            page['title'] += f' in category "{selected_category.name}"'
+            sidebar['title'] += f' in category "{selected_category.name}"'
         except models.ObjectDoesNotExist as e:
-            page['title'] = 'No such category exists!'
-
-    tags = Tag.objects.all()
-
-
+            sidebar['title'] = 'No such category exists!'
     context = {
-        'categories': categories,
-        'page': page,
+        'sidebar': sidebar,
         'published_posts': published_posts,
-        'tags': tags,
     }
     return render(request, 'posts/post_list.html', context)
 

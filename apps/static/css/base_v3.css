@@ -155,9 +155,9 @@ aside div.container div.jumbotron {
   margin: 0 -15px 15px;
 }
 .sidebar-module-inset {
-  padding: 15px;
-  background-color: rgb(38, 38, 38);
-  border-radius: 0;
+  padding: 20px 20px;
+  background-color: #2e2e31;
+  margin-bottom: 10px;
 }
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
@@ -201,4 +201,18 @@ footer div {
     display: inline-block;
     list-style-type: none;
     margin: 0 10px;
+}
+
+
+/* profile */
+.profile-avatar {
+    text-align: center;
+}
+.profile-avatar > img {
+    max-width: 150px;
+    max-height: 150px;
+    /*clip-path: circle(60px at center);*/
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
