@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import models
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
+from django.views import View
 from .models import Category, Post, Tag
 from apps.blog.models import About, Social
 
@@ -44,32 +45,31 @@ def posts_detail(request, slug=None):
 # TODO: custom manager for Post, that filter all posts from a given month
 # TODO: rewrite all views as ClassBased Views
 # TODO: Add authentication/OAuth
-def posts_list(request, category_slug=None):
-    published_posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
-    sidebar = get_sidebar_data()
-    if category_slug:
-        published_posts = published_posts.filter(category__slug=category_slug)
-        try:
-            selected_category = Category.objects.get(slug=category_slug)
-            sidebar['title'] += f' in category "{selected_category.name}"'
-        except models.ObjectDoesNotExist:
-            sidebar['title'] = 'No such category exists!'
-    context = {
-        'sidebar': sidebar,
-        'published_posts': published_posts,
-    }
-    return render(request, 'posts/post_list.html', context)
+class PostList(View):
+    def get(self, request, category_slug=None):
+        published_posts = Post.objects.filter(publication_date__lte=timezone.now()).order_by('-publication_date')
+        sidebar = get_sidebar_data()
+        if category_slug:
+            published_posts = published_posts.filter(category__slug=category_slug)
+            try:
+                selected_category = Category.objects.get(slug=category_slug)
+                sidebar['title'] += f' in category "{selected_category.name}"'
+            except models.ObjectDoesNotExist:
+                sidebar['title'] = 'No such category exists!'
+        context = {
+            'sidebar': sidebar,
+            'published_posts': published_posts,
+        }
+        return render(request, 'posts/post_list.html', context)
 
 
-@login_required()
-def post_update(request, pk=None):
-    pass
+class PostUpdate(LoginRequiredMixin, View):
+    def get(self, request, pk=None):
+        pass
+
+    def post(self, request, pk=None):
+        pass
 
 
-@login_required()
-def post_delete(request, pk=None):
-    pass
-
-
-class PostDelete(LoginRequiredMixin):
+class PostDelete(LoginRequiredMixin, View):
     pass
