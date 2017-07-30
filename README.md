@@ -13,11 +13,11 @@ from github:
 ```
 clone git@github.com:wdudek82/mysandbox.git && cd mysandbox
 ```
-2. Add to the ~/.bashrc or ~/.bash_profile:
+2. To force pipenv to create venv in project's root,
+add to the ~/.bashrc or ~/.bash_profile:
 ```
 export PIPENV_VENV_IN_PROJECT=1
 ```
-It forces pipenv to create venv in project's root directory.
 3. Using system's/global pip install pipenv: 
 ```
 sudo pip install pipenv
