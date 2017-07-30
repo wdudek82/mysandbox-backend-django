@@ -11,7 +11,7 @@ dirs:
 	@echo "  -> creating project folders ..."
 	@mkdir -p assets
 	@mkdir -p backup
-	@mkdir -p data
+	@mkdir -p local
 	@mkdir -p env
 	@mkdir -p var/log
 

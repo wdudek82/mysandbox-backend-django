@@ -68,6 +68,7 @@ format = columns
 #### TODO:
 - Makefile now can't really discern betwean prod and dev, and installs always all dependencies,
 I must fix that
+- some static resources are downloaded via bower, so I need to include this in installation instructions
 - User profiles
 - avatar img: http://django-avatar.readthedocs.io/en/latest/
 - Translations (PL/EN)

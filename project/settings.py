@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # Project apps
     'apps.blog',
+    'apps.common',
     'apps.forecasts',
     'apps.posts',
     'apps.profiles',
