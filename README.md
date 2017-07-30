@@ -7,6 +7,7 @@ I tried to do too many things at once so now I'm cleaning up, and removing redun
 before I move forward.
 
 ## Installation:
+### Manual
 1. clone 
 [mysandbox-backend-django](https://github.com/wdudek82/mysandbox)
 from github: 
@@ -22,15 +23,12 @@ export PIPENV_VENV_IN_PROJECT=1
 ```
 sudo pip install pipenv
 ```  
-4. Create virtualenv and install project's dependencies:
+4. Create virtual env, install project's dependencies,
+and settings for proper env by typing
+(type ```make``` in project's root for more information.): 
 ```
-pipenv --python python3.6 install
+make [dev|prod]
 ```
-5. and finaly set proper env settings by typing: 
-```
-make dev/prod
-```
-Type ```make``` in project's root for more information.
 
 ### To make things work smoother
 1. to auto-start virtual env configure [autoenv](https://github.com/kennethreitz/autoenv),
@@ -68,6 +66,8 @@ format = columns
 
 
 #### TODO:
+- Makefile now can't really discern betwean prod and dev, and installs always all dependencies,
+I must fix that
 - User profiles
 - avatar img: http://django-avatar.readthedocs.io/en/latest/
 - Translations (PL/EN)
