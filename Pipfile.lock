@@ -1,0 +1,183 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "f6bb376f40ade40dd1382d93138d5f032051e8107e01cda96c0a07e30faa2e28"
+        },
+        "requires": {},
+        "sources": [
+            {
+                "url": "https://pypi.python.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "appdirs": {
+            "version": "==1.4.3"
+        },
+        "asn1crypto": {
+            "version": "==0.22.0"
+        },
+        "bcrypt": {
+            "version": "==3.1.3"
+        },
+        "certifi": {
+            "version": "==2017.7.27.1"
+        },
+        "cffi": {
+            "version": "==1.10.0"
+        },
+        "chardet": {
+            "version": "==3.0.4"
+        },
+        "coreapi": {
+            "version": "==2.3.1"
+        },
+        "coreschema": {
+            "version": "==0.0.4"
+        },
+        "cryptography": {
+            "version": "==2.0.2"
+        },
+        "decorator": {
+            "version": "==4.1.2"
+        },
+        "django": {
+            "version": "==1.11.3"
+        },
+        "django-colorfield": {
+            "version": "==0.1.14"
+        },
+        "django-crispy-forms": {
+            "version": "==1.6.1"
+        },
+        "django-grappelli": {
+            "version": "==2.10.1"
+        },
+        "django-rest-swagger": {
+            "version": "==2.1.2"
+        },
+        "djangorestframework": {
+            "version": "==3.6.3"
+        },
+        "fabric3": {
+            "version": "==1.13.1.post1"
+        },
+        "flake8": {
+            "version": "==3.4.1"
+        },
+        "idna": {
+            "version": "==2.5"
+        },
+        "ipython": {
+            "version": "==6.1.0"
+        },
+        "ipython-genutils": {
+            "version": "==0.2.0"
+        },
+        "itypes": {
+            "version": "==1.1.0"
+        },
+        "jedi": {
+            "version": "==0.10.2"
+        },
+        "jinja2": {
+            "version": "==2.9.6"
+        },
+        "markupsafe": {
+            "version": "==1.0"
+        },
+        "mccabe": {
+            "version": "==0.6.1"
+        },
+        "olefile": {
+            "version": "==0.44"
+        },
+        "openapi-codec": {
+            "version": "==1.3.2"
+        },
+        "paramiko": {
+            "version": "==2.2.1"
+        },
+        "pexpect": {
+            "version": "==4.2.1"
+        },
+        "pickleshare": {
+            "version": "==0.7.4"
+        },
+        "pillow": {
+            "version": "==4.2.1"
+        },
+        "prompt-toolkit": {
+            "version": "==1.0.15"
+        },
+        "ptyprocess": {
+            "version": "==0.5.2"
+        },
+        "pyasn1": {
+            "version": "==0.3.1"
+        },
+        "pycodestyle": {
+            "version": "==2.3.1"
+        },
+        "pycparser": {
+            "version": "==2.18"
+        },
+        "pyflakes": {
+            "version": "==1.5.0"
+        },
+        "pygments": {
+            "version": "==2.2.0"
+        },
+        "pynacl": {
+            "version": "==1.1.2"
+        },
+        "pytz": {
+            "version": "==2017.2"
+        },
+        "requests": {
+            "version": "==2.18.2"
+        },
+        "setuptools": {
+            "version": "==36.2.4"
+        },
+        "simplegeneric": {
+            "version": "==0.8.1"
+        },
+        "simplejson": {
+            "version": "==3.11.1"
+        },
+        "six": {
+            "version": "==1.10.0"
+        },
+        "sqlparse": {
+            "version": "==0.2.3"
+        },
+        "traitlets": {
+            "version": "==4.3.2"
+        },
+        "uritemplate": {
+            "version": "==3.0.0"
+        },
+        "urllib3": {
+            "version": "==1.22"
+        },
+        "wcwidth": {
+            "version": "==0.1.7"
+        }
+    },
+    "develop": {
+        "django": {
+            "version": "==1.11.3"
+        },
+        "django-debug-toolbar": {
+            "version": "==1.8"
+        },
+        "pytz": {
+            "version": "==2017.2"
+        },
+        "sqlparse": {
+            "version": "==0.2.3"
+        }
+    }
+}

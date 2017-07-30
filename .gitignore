@@ -4,15 +4,14 @@
 
 __pycache__/
 assets/
-backend/conf/development.py
-backend/conf/production.py
-backend/wsgi.py
+project/conf/development.py
+project/conf/production.py
+project/wsgi.py
 backup/
 bower_components/
-data/
 env/
+local/
 manage.py
-ve/
-venv/
+.venv/
 
 config.mk
